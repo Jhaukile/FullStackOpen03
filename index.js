@@ -2,14 +2,14 @@ const express = require('express')
 const app = express()
 
 
-const morgan = require('morgan')
+// const morgan = require('morgan')
 
-morgan.token('NAME', function (req, res) { return req.body.name})
-morgan.token('NUMBER', function (req, res) { return req.body.number})
+// morgan.token('NAME', function (req, res) { return req.body.name})
+// morgan.token('NUMBER', function (req, res) { return req.body.number})
 
 
 app.use(express.static('dist'))
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms :NAME :NUMBER'))
+// app.use(morgan(':method :url :status :res[content-length] - :response-time ms :NAME :NUMBER'))
 let persons = [
     {
       id: 1,
