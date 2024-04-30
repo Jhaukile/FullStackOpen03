@@ -8,7 +8,7 @@ morgan.token('NAME', function (req, res) { return req.body.name})
 morgan.token('NUMBER', function (req, res) { return req.body.number})
 
 
-app.use(express.json())
+app.use(express.static('dist'))
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :NAME :NUMBER'))
 let persons = [
     {
