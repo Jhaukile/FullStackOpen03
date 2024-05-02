@@ -52,7 +52,8 @@ app.get('/info',(request, response, next) => {
   console.log(persons.length)
   const date = new Date()
   //const amount = Number(request.)
-  Person.findById().then(result => {
+  Person.findById().then( result => {
+    console.log(result)
     response.json({Message: `phonebook has info for ${persons.length} people`, date:date})
   })
   .catch(error => next(error))
@@ -65,8 +66,8 @@ app.get('/api/persons', (request, response) => {
 })
 
 app.delete('/api/persons/:id', (request, response, next) => {
-  const body = request.body
   Person.findByIdAndDelete(request.params.id).then(result => {
+    console.log(result)
     response.status(204).end()
   })
   .catch(error => next(error))
